@@ -48,7 +48,7 @@ x3 = np.array(columnTransformer.fit_transform(x2), dtype = np.float)
 y = Profit
 
 #Splitting
-X_train, X_test, y_train, y_test = train_test_split(x2, y, test_size=0.3, random_state=3)
+X_train, X_test, y_train, y_test = train_test_split(x3, y, test_size=0.3, random_state=3)
 
 #Logitic
 from sklearn.linear_model import LogisticRegression 
