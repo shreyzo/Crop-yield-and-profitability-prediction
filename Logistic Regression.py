@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  9 11:25:00 2020
+Created on Wed Nov 11 13:55:19 2020
 
-@author: Shreya
+@author: user
 """
+
 import pandas as pd
 import numpy as np
 
@@ -49,13 +50,16 @@ y = Profit
 #Splitting
 X_train, X_test, y_train, y_test = train_test_split(x2, y, test_size=0.3, random_state=3)
 
-#Decision Tree Classifier
-from sklearn.tree import DecisionTreeClassifier
-classifier = DecisionTreeClassifier()
-classifier.fit(X_train, y_train)
-y_pred = classifier.predict(X_test)
-
+#Logitic
+from sklearn.linear_model import LogisticRegression 
 from sklearn.metrics import confusion_matrix
+
+classifier = LogisticRegression(random_state = 0) 
+classifier.fit(X_train, y_train) 
+y_pred = classifier.predict(X_test) 
+matrixForLR = confusion_matrix(y_test, y_pred)
+
+
 matrix = confusion_matrix(y_test, y_pred)
 
 from sklearn.metrics import classification_report
