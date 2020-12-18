@@ -40,4 +40,9 @@ plt.pie(values, labels=labels,autopct='%1.1f%%')
 plt.show()  
 
 ###################################################################
-#Plot 3.
+#Plot 3. Yield per Crop
+plt.tick_params(labelsize=8)
+datainput.groupby("Crop")["Yield (Quintal/ Hectare) "].agg("sum").plot.bar()
+
+###################################################################
+#Plot 4. 
